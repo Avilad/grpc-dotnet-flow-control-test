@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>netcoreapp3.0</TargetFramework>
+        <RootNamespace>FlowControlTest.Server.Core</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Grpc.Core" Version="1.22.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\FlowControlTest.Server\FlowControlTest.Server.csproj" />
+    </ItemGroup>
+
+</Project>

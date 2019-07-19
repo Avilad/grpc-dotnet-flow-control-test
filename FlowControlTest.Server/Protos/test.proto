@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package Test;
+
+service Tester {
+  rpc StreamData (stream TestRequest) returns (TestReply) {}
+}
+
+message TestRequest {
+  string data = 1;
+}
+
+message TestReply {}
