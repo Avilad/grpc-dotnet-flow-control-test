@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Microsoft.Extensions.Hosting;
 
 namespace FlowControlTest.Server.Kestrel
@@ -15,7 +16,12 @@ namespace FlowControlTest.Server.Kestrel
             return Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.UseStartup<Startup>();
+                    webBuilder
+                        .ConfigureKestrel(options =>
+                        {
+                            options.Limits.MaxRequestBodySize = null;
+                        })
+                        .UseStartup<Startup>();
                 });
         }
     }

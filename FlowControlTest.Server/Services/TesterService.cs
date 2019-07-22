@@ -11,7 +11,7 @@ namespace FlowControlTest.Server.Services
         {
             while (await requestStream.MoveNext())
             {
-                await Task.Delay(10);
+                await Task.Delay(1);
             }
             return new TestReply();
         }

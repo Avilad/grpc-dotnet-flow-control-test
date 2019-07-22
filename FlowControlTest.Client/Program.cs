@@ -23,7 +23,7 @@ namespace FlowControlTest.Client
             var client = new Tester.TesterClient(channel);
 
             var call = client.StreamData();
-            for (var i = 0; i < 10000; ++i)
+            for (var i = 0; i < 1000000; ++i)
             {
                 sw.Start();
                 await call.RequestStream.WriteAsync(new TestRequest
